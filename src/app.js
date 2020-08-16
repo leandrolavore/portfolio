@@ -12,7 +12,7 @@ export default class App extends Component {
     }
 
     render() {
-        console.log(process.env.S3_BUCKET)
+
         return (
             <div id="App">
                 <Navbar/>

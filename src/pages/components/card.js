@@ -11,7 +11,7 @@ export default class Card extends Component {
             <li className={`uk-card uk-card-default uk-card-body ${this.props.className
             }`}>
                 <h3 className="uk-card-title">{this.props.name}</h3>
-                <video src={`../../../public/videos/${this.props.name}.mp4`} 
+                <video src={`${process.env.S3_BUCKET}/${this.props.name}.mp4`} 
                         className="video"
                         autoPlay 
                         loop 
