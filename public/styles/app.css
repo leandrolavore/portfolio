@@ -1,0 +1,171 @@
+body, html {
+    height: 100vh;
+    width: 100vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:0;
+    overflow: hidden;
+  }
+
+#App{
+    
+}
+
+.text {
+    padding: 5rem 10rem;
+    font-size: 0.8rem;
+    width: 40%;
+}
+
+nav  {
+    height: 5%;
+}
+
+nav ul.uk-tab:before{
+    border: none;
+}
+
+.tab-nav {
+    padding-top: 5vh; 
+}
+
+.uk-tab {
+    margin: 0;
+}
+
+.slider {
+    width: 60%;
+    height: 100%;
+    padding: 4rem 5rem;
+    position: relative;
+}
+
+.overlay {
+    height: 100%;
+    width: 60%;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+    background-image: linear-gradient(90deg, rgba(168, 166, 166, 0.308), rgba(53, 53, 53, 0.541));
+}
+
+.card {
+    width: 80%;
+    height: 80%;
+    top: 12%;
+    margin-bottom: 10vh;
+    z-index: 1000;
+    position: absolute;
+}
+
+.animateCard {
+    animation: grow 2s;
+}
+
+.port-container {
+    height: 90vh;
+    width: 100vw;
+}
+
+.vertical {
+    height: 85vh;
+}
+
+.slider {
+}
+
+.scroll-down {
+    position: sticky;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+}
+
+.button {
+    position: sticky;
+    z-index: 2000;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prevCard {
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+    transform: translate(15%, -10%);
+}
+
+.nextCard {
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+    transform: translate(20%, 45%);
+}
+
+.video {
+    width: 75%;
+}
+
+.cardLinks-container {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: 0;
+    transform: translate(-50%, -100%);
+    padding: 5;
+    bottom: 0;
+}
+
+.flex-container-python {
+    justify-content: center;
+}
+
+.python-icon {
+    display:flex;
+}
+
+.python-icon svg {
+    margin: auto;
+}
+
+.python-button {
+    margin: 0 auto;
+}
+
+.python-band{
+    flex: 1;
+    padding: 0 2.5rem;
+    max-height: 85vh;
+    justify-content: center;
+}
+
+.python-text {
+    
+}
+
+.python-title {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(1px,1fr));
+    grid-gap: .5rem;
+}
+
+.python-span {
+    grid-column: 1/7;
+}
+
+.exp-grid{
+    padding: 2.5rem;
+}
+
+form > textarea {
+    height: 300px;
+}
+
+@keyframes grow {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
