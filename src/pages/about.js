@@ -1,15 +1,31 @@
 import React, {Component} from 'react';
 
+var ses = require('node-ses')
+  , client = ses.createClient({key: process.env.AWS_ACCESS_KEY, secret: process.env.AWS_SECRET_KEY});
+
 export default class About extends Component{
 
     constructor(){
         super();
 
         this.state = {
-            name: "",
-            email: "",
-            subject:""
+            mail: {
+                name: "",
+                email: "",
+                subject:"",
+                message: ""
+            }
         }
+    }
+
+    handleSubmit(){
+        client.sendEmail({
+            to: process.env.MY_MAIL,
+            from: this.state.mail.email,
+            subject: this.state.mail.subject,
+            message: this.state.mail.message
+           });
+        //clean inputs
     }
 
     render(){
@@ -28,11 +44,11 @@ export default class About extends Component{
                         <h3>
                             Contact me:
                         </h3>
-                        <form>
-                            <input className="uk-input" value={this.state.name} type="text"/>
-                            <input className="uk-input" value={this.state.email} type="text"/>
-                            <input className="uk-input" value={this.state.subject} type="text"/>
-                            <textarea className="uk-textarea"></textarea>
+                        <form onSubmit={this.handleSubmit}>
+                            <input className="uk-input" value={this.state.mail.name} type="text"/>
+                            <input className="uk-input" value={this.state.mail.email} type="text"/>
+                            <input className="uk-input" value={this.state.mail.subject} type="text"/>
+                            <textarea className="uk-textarea" value={this.state.mail.message}></textarea>
                             <button className="uk-button uk-button-primary uk-align-right">Send</button>
                         </form>
                     </div>
