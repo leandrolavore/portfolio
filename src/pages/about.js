@@ -23,8 +23,9 @@ export default class About extends Component{
                             Contact me:
                         </h3>
                         <form>
-                            <input className="uk-input" type="text"/>
-                            <input className="uk-input" type="text"/>
+                            <input className="uk-input" value="your name" type="text"/>
+                            <input className="uk-input" value="your email" type="text"/>
+                            <input className="uk-input" value="subject" type="text"/>
                             <textarea className="uk-textarea"></textarea>
                             <button className="uk-button uk-button-primary uk-align-right">Send</button>
                         </form>
