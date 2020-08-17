@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-var ses = require('node-ses')
-  , client = ses.createClient({key: process.env.AWS_ACCESS_KEY, secret: process.env.AWS_SECRET_KEY});
-
 export default class About extends Component{
 
     constructor(){
