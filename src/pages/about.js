@@ -12,17 +12,40 @@ export default class About extends Component{
                 subject:"",
                 message: ""
             }
-        }
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target;
+
+        this.setState(prevState => ({
+            mail:{
+                ...prevState.mail,
+                [name]: value
+            }
+
+        }));
     }
 
     handleSubmit(){
-        client.sendEmail({
-            to: process.env.MY_MAIL,
-            from: this.state.mail.email,
-            subject: this.state.mail.subject,
-            message: this.state.mail.message
-           });
-        //clean inputs
+    
+        fetch('https://d6gs0cwqv7.execute-api.ap-southeast-2.amazonaws.com/prod', 
+        { 
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            body: 
+                JSON.stringify({
+                    name: this.state.mail.name, 
+                    email: this.state.mail.email,
+                    subject: this.state.mail.subject,
+                    message: this.state.mail.message
+                })
+        });
     }
 
     render(){
@@ -42,10 +65,42 @@ export default class About extends Component{
                             Contact me:
                         </h3>
                         <form onSubmit={this.handleSubmit}>
-                            <input className="uk-input" value={this.state.mail.name} type="text"/>
-                            <input className="uk-input" value={this.state.mail.email} type="text"/>
-                            <input className="uk-input" value={this.state.mail.subject} type="text"/>
-                            <textarea className="uk-textarea" value={this.state.mail.message}></textarea>
+                            <div>
+                                <span class="uk-label">Name</span>
+                                <input 
+                                    className="uk-input" 
+                                    name="name"
+                                    value={this.state.mail.name} 
+                                    onChange={this.handleChange} 
+                                    type="text"/>
+                            </div>
+                            <div>
+                                <span class="uk-label">E-mail</span>
+                                <input 
+                                    className="uk-input" 
+                                    name="email"
+                                    value={this.state.mail.email} 
+                                    onChange={this.handleChange} 
+                                    type="text"/>
+                            </div>
+                            <div>
+                                <span class="uk-label">Subject</span>
+                                <input 
+                                    className="uk-input" 
+                                    name="subject"
+                                    value={this.state.mail.subject} 
+                                    onChange={this.handleChange} 
+                                    type="text"/>
+                            </div>
+                            <div>
+                                <span class="uk-label">Message</span>
+                                <textarea 
+                                    className="uk-textarea" 
+                                    name="message"
+                                    value={this.state.mail.message}  
+                                    onChange={this.handleChange}>
+                                </textarea>
+                            </div>
                             <button className="uk-button uk-button-primary uk-align-right">Send</button>
                         </form>
                     </div>
