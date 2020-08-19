@@ -66,7 +66,7 @@ export default class About extends Component{
                         </h3>
                         <form onSubmit={this.handleSubmit}>
                             <div>
-                                <span class="uk-label">Name</span>
+                                <span className="uk-label">Name</span>
                                 <input 
                                     className="uk-input" 
                                     name="name"
@@ -75,7 +75,7 @@ export default class About extends Component{
                                     type="text"/>
                             </div>
                             <div>
-                                <span class="uk-label">E-mail</span>
+                                <span className="uk-label">E-mail</span>
                                 <input 
                                     className="uk-input" 
                                     name="email"
@@ -84,7 +84,7 @@ export default class About extends Component{
                                     type="text"/>
                             </div>
                             <div>
-                                <span class="uk-label">Subject</span>
+                                <span className="uk-label">Subject</span>
                                 <input 
                                     className="uk-input" 
                                     name="subject"
@@ -93,7 +93,7 @@ export default class About extends Component{
                                     type="text"/>
                             </div>
                             <div>
-                                <span class="uk-label">Message</span>
+                                <span className="uk-label">Message</span>
                                 <textarea 
                                     className="uk-textarea" 
                                     name="message"

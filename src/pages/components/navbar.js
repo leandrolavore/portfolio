@@ -26,8 +26,8 @@ export default class Navbar extends Component {
     }
 
     render() {
-        let tabs =  this.state.tabs && this.state.tabs.map(tab => 
-                        <li 
+        let tabs =  this.state.tabs && this.state.tabs.map((tab, index) => 
+                        <li key={index}
                             className={`tab-link ${tab.isActive ? "uk-active" : ""}`} 
                             onClick={(e) => this.setActive(e)}
                         >
