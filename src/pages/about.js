@@ -31,12 +31,15 @@ export default class About extends Component{
 
     handleSubmit(){
     
-        fetch('https://d6gs0cwqv7.execute-api.ap-southeast-2.amazonaws.com/prod', 
+        fetch('https://ddihce1kxi.execute-api.ap-southeast-2.amazonaws.com/prod/ses', 
         { 
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Methods': '*',
+                'Access-Control-Allow-Origin': '*',
+                'credentials': 'same-origin',
+                'mode': 'cors',
               },
             body: 
                 JSON.stringify({
