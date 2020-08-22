@@ -32,34 +32,6 @@ nav ul.uk-tab:before{
     margin: 0;
 }
 
-.slider {
-    width: 60%;
-    height: 100%;
-    padding: 4rem 5rem;
-    position: relative;
-}
-
-.overlay {
-    height: 100%;
-    width: 60%;
-    right: 0;
-    position: absolute;
-    z-index: 10;
-    background-image: linear-gradient(90deg, rgba(168, 166, 166, 0.308), rgba(53, 53, 53, 0.541));
-}
-
-.port-container {
-    height: 90vh;
-    width: 100vw;
-}
-
-.vertical {
-    height: 85vh;
-}
-
-.slider {
-}
-
 .scroll-down {
     position: sticky;
     left: 50%;
@@ -75,32 +47,8 @@ nav ul.uk-tab:before{
     transform: translate(-50%, -50%);
 }
 
-.prevCard {
-    width: 60%;
-    height: 60%;
-    z-index: 1;
-    transform: translate(15%, -10%);
-}
-
-.nextCard {
-    width: 60%;
-    height: 60%;
-    z-index: 1;
-    transform: translate(20%, 45%);
-}
-
 .video {
     width: 50%;
-}
-
-.cardLinks-container {
-    display: flex;
-    flex-flow: column;
-    position: absolute;
-    right: 0;
-    transform: translate(-50%, -100%);
-    padding: 5;
-    bottom: 0;
 }
 
 .flex-container-python {

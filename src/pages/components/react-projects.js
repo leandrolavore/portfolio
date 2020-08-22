@@ -26,7 +26,7 @@ export default class ReactProjects extends Component {
         });
 
         return (
-                <div className="uk-slider">
+                <div className="uk-slider uk-margin-top">
                     <a href="" className="uk-slidenav-large uk-position-center-left-out" uk-slidenav-previous></a>
                     <a href="" className="uk-slidenav-large uk-position-center-right-out" uk-slidenav-next></a>
                     <ul className="uk-slider-items">
