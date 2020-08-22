@@ -32,14 +32,6 @@ nav ul.uk-tab:before{
     margin: 0;
 }
 
-.scroll-down {
-    position: sticky;
-    left: 50%;
-    top: 95%;
-    transform: translate(-50%, -50%);
-    z-index: 2000;
-}
-
 .button {
     position: sticky;
     z-index: 2000;

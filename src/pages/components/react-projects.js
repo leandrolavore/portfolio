@@ -26,12 +26,12 @@ export default class ReactProjects extends Component {
         });
 
         return (
-                <div className="uk-slider uk-margin-top">
-                    <a href="" className="uk-slidenav-large uk-position-center-left-out" uk-slidenav-previous></a>
-                    <a href="" className="uk-slidenav-large uk-position-center-right-out" uk-slidenav-next></a>
-                    <ul className="uk-slider-items">
+                <div  className="uk-position-relative uk-visible-toggle uk-dark" uk-slideshow="ratio: 7:3">
+                    <ul className="uk-slideshow-items">
                         {cards}
                     </ul>
+                    <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="1" uk-slideshow-item="previous"></a>
+                    <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="1" uk-slideshow-item="next"></a>
                 </div>
         )
     }
