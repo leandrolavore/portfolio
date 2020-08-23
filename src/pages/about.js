@@ -31,7 +31,7 @@ export default class About extends Component{
 
     handleSubmit(){
     
-        fetch('https://ddihce1kxi.execute-api.ap-southeast-2.amazonaws.com/prod/ses', 
+        fetch(process.env.MAIL_API_URL, 
         { 
             method: 'POST',
             headers: {

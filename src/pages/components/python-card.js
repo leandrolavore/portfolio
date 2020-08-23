@@ -24,7 +24,7 @@ export default class PythonCard extends Component{
 
         return( project != {}
                     ?
-                        <div className='uk-width-1-4 uk-flex uk-flex-column python-band'>
+                        <div className='uk-width-1-4 uk-flex uk-flex-column python-band uk-animation-bottom'>
                             <i className="uk-flex-top python-icon" uk-icon="search"></i>
                             <div>
                                 <h1 className="uk-text-lead uk-text-center python-title">
