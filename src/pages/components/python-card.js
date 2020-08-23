@@ -34,7 +34,9 @@ export default class PythonCard extends Component{
                                     {project.desc}
                                 </p>
                             </div>
-                            <a className="uk-flex-bottom uk-button uk-button-default uk-button-small" href={project.git}>See the code</a>
+                            <a className="uk-flex-bottom uk-button uk-button-default uk-button-small" 
+                                href={project.git}
+                                target="_blank">See the code</a>
                         </div>  
                     :
 
