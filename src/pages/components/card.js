@@ -3,11 +3,26 @@ import React, { Component } from 'react';
 export default class Card extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+           isLoading: true, 
+           project: {}
+        }
     }
 
+    componentDidMount() {
+        fetch(`${process.env.S3_BUCKET}/jsons/${this.props.name}.json`)
+            .then(data => data.json())
+            .then((json) => {
+                this.setState({project: json})
+            })
+    }
+
+
     render() {
+        const {project} = this.state;
         
-        return (
+        return project != {} ? 
             <li className={`uk-card uk-card-default 
                             uk-card-body  
                             uk-margin-left 
@@ -15,9 +30,9 @@ export default class Card extends Component {
                             uk-container-large
                             ${this.props.className}`}
             >
-                <h3 className="uk-card-title">{this.props.name}</h3>
+                <h3 className="uk-card-title">{project.name}</h3>
                 <div className="uk-flex">
-                    <video src={`${process.env.S3_BUCKET}/${this.props.name}.mp4`} 
+                    <video src={`${process.env.S3_BUCKET}/${project.name}.mp4`} 
                             className="video"
                             autoPlay 
                             loop 
@@ -28,18 +43,19 @@ export default class Card extends Component {
                     <div className="uk-padding cardLinks-container">
                         <div>
                             <p>
-                            These classes define the horizontal alignment of flex items and distribute the space between them. 
-                            Add one or more of them to the flex container in order to configure the alignments of the flex items.
-                            By default, flex items are aligned to the left as does the .uk-flex-left class.
+                                {project.desc}
                             </p>
                         </div>
                         <div className="uk-flex uk-flex-column">
-                            <a>Live</a>
-                            <a>Git Hub</a>
+                            <a href={project.live} target="_blank">Live</a>
+                            <a href={project.git} target="_blank">Git Hub</a>
                         </div>
                     </div>
                 </div>
             </li>
-        )
+            
+        :
+
+            <h1>Loading ...</h1>
     }
 }

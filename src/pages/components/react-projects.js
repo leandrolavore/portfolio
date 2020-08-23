@@ -13,7 +13,6 @@ export default class ReactProjects extends Component {
                 "Tower",
                 "Users"
             ],
-            focusedCard: 0
         }
     }
 
