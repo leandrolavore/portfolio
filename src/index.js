@@ -1,4 +1,4 @@
-import App from "./App";
+import app from "./app";
 import React from 'react';
 import ReactDOM from 'react-dom'; 
 import {HashRouter} from 'react-router-dom';
