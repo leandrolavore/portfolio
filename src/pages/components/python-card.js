@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import Loader from './loader.js';
 
 export default class PythonCard extends Component{
 
@@ -40,7 +41,7 @@ export default class PythonCard extends Component{
                         </div>  
                     :
 
-                        <h1>Loading ...</h1>
+                        <Loader/>
         );
     }
 }

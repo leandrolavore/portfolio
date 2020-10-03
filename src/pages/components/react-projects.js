@@ -21,7 +21,8 @@ export default class ReactProjects extends Component {
         let cards = this.state.videos.map((video, index)=>{ 
             return <Card    name={video}
                             className="uk-card uk-card-body uk-card-default uk-card-large"
-                            uk-slider-item={index}/>;  
+                            uk-slider-item={index}
+                            key={index}/>;  
         });
 
         return (

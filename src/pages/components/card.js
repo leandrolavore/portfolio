@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from './loader.js';
 
 export default class Card extends Component {
     constructor(props) {
@@ -11,16 +12,32 @@ export default class Card extends Component {
     }
 
     componentDidMount() {
-        fetch(`${process.env.S3_BUCKET}/jsons/${this.props.name}.json`)
+        if(this.props.name){
+            fetch(`${process.env.S3_BUCKET}/jsons/${this.props.name}.json`)
             .then(data => data.json())
             .then((json) => {
                 this.setState({project: json})
             })
+        }
     }
 
 
     render() {
         const {project} = this.state;
+        const renderVideo = () => {
+            if(project.name){
+                return <video src={`${process.env.S3_BUCKET}/${project.name}.mp4`} 
+                        className="video"
+                        autoPlay 
+                        loop 
+                        controls 
+                        muted      
+                        >   
+                        </video>;
+            }else{
+                return <Loader/>;
+            }
+        }
         
         return project != {} ? 
             <li className={`uk-card uk-card-default 
@@ -32,14 +49,7 @@ export default class Card extends Component {
             >
                 <h3 className="uk-card-title">{project.name}</h3>
                 <div className="uk-flex">
-                    <video src={`${process.env.S3_BUCKET}/${project.name}.mp4`} 
-                            className="video"
-                            autoPlay 
-                            loop 
-                            controls 
-                            muted      
-                    >   
-                    </video>
+                    {renderVideo()}
                     <div className="uk-padding cardLinks-container">
                         <div>
                             <p>
@@ -56,6 +66,6 @@ export default class Card extends Component {
             
         :
 
-            <h1>Loading ...</h1>
+            <Loader/>
     }
 }

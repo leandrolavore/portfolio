@@ -7,6 +7,6 @@ export default class Modal extends Component {
     }
 
     render(){
-        
+      
     }
 }

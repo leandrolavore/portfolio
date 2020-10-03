@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Loader from './components/loader'
 
 export default class About extends Component{
 
@@ -11,10 +12,19 @@ export default class About extends Component{
                 email: "",
                 subject:"",
                 message: ""
-            }
+            },
+            about_json: {}
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        fetch(`${process.env.S3_BUCKET}/jsons/about_json.json`)
+            .then(data => data.json())
+            .then((json) => {
+                this.setState({about_json: json})
+            })
     }
 
     handleChange(event) {
@@ -52,15 +62,24 @@ export default class About extends Component{
     }
 
     render(){
+        let {about_json} = this.state;
+
+        const renderAboutText = () => {
+            if(about_json.text){
+                return <p className="about_text">{about_json.text}</p>;
+            }
+            else{
+                return  <Loader/>;
+            }
+        }
+
         return(
                 <div className="uk-container uk-flex uk-height-viewport uk-padding-large">
                     <div className="uk-container uk-container-large uk-width-1-2">
                         <h1>
                             About
                         </h1>
-                        <p>
-                            My name is leandro blah blah blah
-                        </p>
+                        {renderAboutText()}
                     </div>
                     <hr className="uk-divider-vertical uk-padding-small"></hr>
                     <div className="uk-container uk-container-large uk-width-1-2">
