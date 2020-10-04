@@ -55,7 +55,19 @@ export default class About extends Component{
                     subject: this.state.mail.subject,
                     message: this.state.mail.message
                 })
-        }).then(res => console.log(res));
+        }).then(()=>{this.clearFields()});
+    }
+    
+
+    clearFields(){
+        this.setState({
+            mail: {
+                name: "",
+                email: "",
+                subject:"",
+                message: ""
+            }
+        ,})
     }
 
     render(){
