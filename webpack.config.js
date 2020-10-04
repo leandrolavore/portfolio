@@ -36,6 +36,7 @@ module.exports = {
         template: "./src/index.html",
         filename: "./index.html"
       }),
-      new Dotenv()
+      new Dotenv(),
+      new webpack.EnvironmentPlugin(['MAIL_API_URL', 'S3_BUCKET'])
     ]
   };
