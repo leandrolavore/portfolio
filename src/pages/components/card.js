@@ -26,7 +26,7 @@ export default class Card extends Component {
         const {project} = this.state;
         const renderVideo = () => {
             if(project.name){
-                return <video src={`${process.env.S3_BUCKET}/${project.name}.mp4`} 
+                return <video src={`${S3_BUCKET}/${project.name}.mp4`} 
                         className="video"
                         autoPlay 
                         loop 
