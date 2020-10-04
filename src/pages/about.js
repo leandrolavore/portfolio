@@ -39,17 +39,14 @@ export default class About extends Component{
         }));
     }
 
-    handleSubmit(){
-    
+    handleSubmit(e){
+        e.preventDefault();
         fetch(process.env.MAIL_API_URL, 
         { 
             method: 'POST',
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Methods': '*',
-                'Access-Control-Allow-Origin': '*',
-                'credentials': 'same-origin',
-                'mode': 'cors',
               },
             body: 
                 JSON.stringify({
@@ -58,7 +55,7 @@ export default class About extends Component{
                     subject: this.state.mail.subject,
                     message: this.state.mail.message
                 })
-        });
+        }).then(res => console.log(res));
     }
 
     render(){
@@ -86,7 +83,7 @@ export default class About extends Component{
                         <h3>
                             Contact me:
                         </h3>
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={(e)=>this.handleSubmit(e)}>
                             <div>
                                 <span className="uk-label">Name</span>
                                 <input 
