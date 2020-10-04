@@ -67,7 +67,7 @@ export default class About extends Component{
                 subject:"",
                 message: ""
             }
-        ,})
+        })
     }
 
     render(){
