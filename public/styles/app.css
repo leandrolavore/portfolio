@@ -92,6 +92,14 @@ form  textarea {
     padding: 0 1rem;
 }
 
+.under-construction {
+    background: transparent url('../images/under-construction.png') no-repeat fixed center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+}
+
 @keyframes grow {
     from{
         transform: scale(0);
