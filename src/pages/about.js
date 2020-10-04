@@ -41,7 +41,7 @@ export default class About extends Component{
 
     handleSubmit(e){
         e.preventDefault();
-        fetch(MAIL_API_URL, 
+        fetch(process.env.MAIL_API_URL, 
         { 
             method: 'POST',
             headers: {
