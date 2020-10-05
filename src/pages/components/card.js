@@ -48,7 +48,7 @@ export default class Card extends Component {
                             ${this.props.className}`}
             >
                 <h3 className="uk-card-title">{project.name}</h3>
-                <div className="uk-flex">
+                <div className="uk-flex video-container">
                     {renderVideo()}
                     <div className="uk-padding cardLinks-container">
                         <div>

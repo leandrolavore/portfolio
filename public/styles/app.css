@@ -41,6 +41,13 @@ nav ul.uk-tab:before{
 
 .video {
     width: 50%;
+    -webkit-box-shadow: 0px 0px 62px -38px rgba(163,157,163,1);
+    -moz-box-shadow: 0px 0px 62px -38px rgba(163,157,163,1);
+    box-shadow: 0px 0px 62px -38px rgba(163,157,163,1);
+    border-radius: 16px;
+    padding: 1rem;
+    border: 1px solid #D5DAEA;
+    border-radius: 8px;
 }
 
 .flex-container-python {
@@ -98,6 +105,25 @@ form  textarea {
     width: 100vw;
     position: fixed;
     z-index: 1000;
+}
+
+.react-card {
+    height: 33rem;
+    margin-top: 5rem;
+}
+
+.arrow-left{
+    position: fixed !important;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.arrow-right {
+    position: fixed !important;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
 }
 
 @keyframes grow {

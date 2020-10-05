@@ -20,18 +20,26 @@ export default class ReactProjects extends Component {
 
         let cards = this.state.videos.map((video, index)=>{ 
             return <Card    name={video}
-                            className="uk-card uk-card-body uk-card-default uk-card-large"
+                            className="react-card uk-card uk-card-body uk-card-default"
                             uk-slider-item={index}
                             key={index}/>;  
         });
 
         return (
-                <div  className="uk-position-relative uk-visible-toggle uk-dark " uk-slideshow="ratio: 7:3">
+                <div  className="uk-position-relative uk-visible-toggle uk-dark " uk-slideshow="ratio: 1:1">
                     <ul className="uk-slideshow-items uk-margin-medium-right uk-margin-medium-left">
                         {cards}
                     </ul>
-                    <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="1" uk-slideshow-item="previous"></a>
-                    <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="1" uk-slideshow-item="next"></a>
+                    <a className="arrow-left uk-hidden-hover" 
+                        href="#" 
+                        uk-slidenav-previous="1"
+                        uk-slideshow-item="previous">
+                    </a>
+                    <a className="arrow-right uk-hidden-hover" 
+                        href="#" 
+                        uk-slidenav-next="1" 
+                        uk-slideshow-item="next">
+                    </a>
                 </div>
         )
     }
