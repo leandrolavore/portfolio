@@ -13,7 +13,8 @@ export default class About extends Component{
                 subject:"",
                 message: ""
             },
-            about_json: {}
+            about_json: {},
+            isLoading: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,6 +42,7 @@ export default class About extends Component{
 
     handleSubmit(e){
         e.preventDefault();
+        this.setState({isLoading: true})
         fetch(process.env.MAIL_API_URL, 
         { 
             method: 'POST',
@@ -55,7 +57,9 @@ export default class About extends Component{
                     subject: this.state.mail.subject,
                     message: this.state.mail.message
                 })
-        }).then(()=>{this.clearFields()});
+        })
+        .then((res)=>{ res.ok && this.setState({isLoading: false})})
+        .then(()=>{this.clearFields()});
     }
     
 
@@ -71,7 +75,7 @@ export default class About extends Component{
     }
 
     render(){
-        let {about_json} = this.state;
+        let {about_json, isLoading} = this.state;
 
         const renderAboutText = () => {
             if(about_json.text){
@@ -79,6 +83,12 @@ export default class About extends Component{
             }
             else{
                 return  <Loader/>;
+            }
+        }
+
+        const showLoader = () => {
+            if(isLoading){
+                return <Loader/>
             }
         }
 
@@ -95,6 +105,7 @@ export default class About extends Component{
                         <h3>
                             Contact me:
                         </h3>
+                        {showLoader()}
                         <form onSubmit={(e)=>this.handleSubmit(e)}>
                             <div>
                                 <span className="uk-label">Name</span>

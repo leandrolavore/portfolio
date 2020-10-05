@@ -126,6 +126,25 @@ form  textarea {
     transform: translateY(-50%);
 }
 
+.uk-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.uk-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @keyframes grow {
     from{
         transform: scale(0);
