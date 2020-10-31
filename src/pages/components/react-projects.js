@@ -26,8 +26,8 @@ export default class ReactProjects extends Component {
         });
 
         return (
-                <div  className="uk-position-relative uk-visible-toggle uk-dark " uk-slideshow="ratio: 1:1">
-                    <ul className="uk-slideshow-items uk-margin-medium-right uk-margin-medium-left">
+                <div  className="uk-position-relative uk-visible-toggle uk-dark uk-height-1-1" uk-slideshow="ratio: 1:1">
+                    <ul className="uk-slideshow-items uk-margin-medium-right uk-margin-medium-left uk-height-1-1">
                         {cards}
                     </ul>
                     <a className="arrow-left uk-hidden-hover" 
