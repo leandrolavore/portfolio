@@ -143,7 +143,7 @@ export default class About extends Component{
                                     onChange={this.handleChange}>
                                 </textarea>
                             </div>
-                            <button className="uk-button uk-button-primary uk-align-right">Send</button>
+                            <button id="submit_email" className="uk-button uk-button-primary uk-align-right">Send</button>
                         </form>
                     </div>
                 </div>
