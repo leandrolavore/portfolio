@@ -42,6 +42,11 @@ export default class About extends Component{
 
     handleSubmit(e){
         e.preventDefault();
+
+         dataLayer.push({
+             'event': 'email-submitted'
+            })
+
         this.setState({isLoading: true})
         fetch(process.env.MAIL_API_URL, 
         { 
