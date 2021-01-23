@@ -113,40 +113,49 @@ export default class About extends Component{
                         {showLoader()}
                         <form onSubmit={(e)=>this.handleSubmit(e)}>
                             <div>
-                                <span className="uk-label">Name</span>
-                                <input 
-                                    className="uk-input" 
-                                    name="name"
-                                    value={this.state.mail.name} 
-                                    onChange={this.handleChange} 
-                                    type="text"/>
+                                <label>
+                                    <span className="uk-label">Name</span>
+                                    <input 
+                                        className="uk-input" 
+                                        name="name"
+                                        value={this.state.mail.name} 
+                                        onChange={this.handleChange} 
+                                        type="text"/>
+                                </label>
+                                    
                             </div>
                             <div>
-                                <span className="uk-label">E-mail</span>
-                                <input 
-                                    className="uk-input" 
-                                    name="email"
-                                    value={this.state.mail.email} 
-                                    onChange={this.handleChange} 
-                                    type="text"/>
+                                <label>
+                                    <span className="uk-label">E-mail</span>
+                                    <input 
+                                        className="uk-input" 
+                                        name="email"
+                                        value={this.state.mail.email} 
+                                        onChange={this.handleChange} 
+                                        type="text"/>
+                                </label>
                             </div>
                             <div>
-                                <span className="uk-label">Subject</span>
-                                <input 
-                                    className="uk-input" 
-                                    name="subject"
-                                    value={this.state.mail.subject} 
-                                    onChange={this.handleChange} 
-                                    type="text"/>
+                                 <label>
+                                    <span className="uk-label">Subject</span>
+                                    <input 
+                                        className="uk-input" 
+                                        name="subject"
+                                        value={this.state.mail.subject} 
+                                        onChange={this.handleChange} 
+                                        type="text"/>
+                                </label>
                             </div>
                             <div>
-                                <span className="uk-label">Message</span>
-                                <textarea 
-                                    className="uk-textarea" 
-                                    name="message"
-                                    value={this.state.mail.message}  
-                                    onChange={this.handleChange}>
-                                </textarea>
+                                <label>
+                                    <span className="uk-label">Message</span>
+                                    <textarea 
+                                        className="uk-textarea" 
+                                        name="message"
+                                        value={this.state.mail.message}  
+                                        onChange={this.handleChange}>
+                                    </textarea>
+                                </label>
                             </div>
                             <button id="submit_email" className="uk-button uk-button-primary uk-align-right">Send</button>
                         </form>
