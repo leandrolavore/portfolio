@@ -113,9 +113,10 @@ export default class About extends Component{
                         {showLoader()}
                         <form onSubmit={(e)=>this.handleSubmit(e)}>
                             <div>
-                                <label>
+                                <label for="name">
                                     <span className="uk-label">Name</span>
                                     <input 
+                                        id="name"
                                         className="uk-input" 
                                         name="name"
                                         value={this.state.mail.name} 
@@ -125,9 +126,10 @@ export default class About extends Component{
                                     
                             </div>
                             <div>
-                                <label>
+                                <label for="email">
                                     <span className="uk-label">E-mail</span>
                                     <input 
+                                        id="email"
                                         className="uk-input" 
                                         name="email"
                                         value={this.state.mail.email} 
@@ -136,9 +138,10 @@ export default class About extends Component{
                                 </label>
                             </div>
                             <div>
-                                 <label>
+                                 <label for="subject">
                                     <span className="uk-label">Subject</span>
                                     <input 
+                                        id="subject"
                                         className="uk-input" 
                                         name="subject"
                                         value={this.state.mail.subject} 
@@ -147,9 +150,10 @@ export default class About extends Component{
                                 </label>
                             </div>
                             <div>
-                                <label>
+                                <label for="message">
                                     <span className="uk-label">Message</span>
                                     <textarea 
+                                        id="message"
                                         className="uk-textarea" 
                                         name="message"
                                         value={this.state.mail.message}  
